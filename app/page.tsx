@@ -30,7 +30,7 @@ export default function Home() {
         <GameScene player={player} onEnding={(type) => { setEndingType(type); setPhase('ending'); }} />
       )}
       {phase === 'ending' && endingType && (
-        <EndingScreen type={endingType} onRestart={() => { setPlayer(null); setEndingType(null); setPhase('onboarding'); }} />
+        <EndingScreen player={player!} type={endingType} onRestart={() => { setPlayer(null); setEndingType(null); setPhase('onboarding'); }} />
       )}
     </main>
   );
